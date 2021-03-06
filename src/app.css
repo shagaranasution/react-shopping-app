@@ -1,0 +1,7 @@
+.App {
+  position: relative;
+  max-width: 415px;
+  height: 100vh;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
+}

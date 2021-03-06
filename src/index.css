@@ -11,9 +11,11 @@ a {
 }
 .container {
   max-width: 415px;
+  height: 100vh;
   margin: 0 auto;
   padding: 20px;
   background-color: rgba(235, 235, 235, 0.3);
+  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
 }
 .loading-state {
   border-radius: 6px;

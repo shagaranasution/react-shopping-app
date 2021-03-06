@@ -1,10 +1,13 @@
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
+import NavBar from './components/NavBar'
 import Home from './containers/Home'
 import ProductDetails from './containers/ProductDetails'
 import WishlistPage from './containers/WishlistPage'
 import CartPage from './containers/CartPage'
 import SearchPage from './containers/SearchPage'
+
+import './app.css'
 
 function App() {
   return (
@@ -12,31 +15,22 @@ function App() {
       <div className="App">
         <Switch>
           <Route path="/" exact>
-            <div className="container">
-              <Home />
-            </div>
+            <Home />
           </Route>
           <Route path="/detail/:id">
-            <div className="container">
-              <ProductDetails />
-            </div>
+            <ProductDetails />
           </Route>
           <Route path="/wishlist" >
-            <div className="container">
-              <WishlistPage />
-            </div>
+            <WishlistPage />
           </Route>
           <Route path="/cart" >
-            <div className="container">
-              <CartPage />
-            </div>
+            <CartPage />
           </Route>
           <Route path="/search" >
-            <div className="container">
-              <SearchPage />
-            </div>
+            <SearchPage />
           </Route>
         </Switch>
+        <NavBar />
       </div>
     </Router>
   );
