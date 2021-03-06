@@ -13,23 +13,25 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <Switch>
-          <Route path="/" exact>
-            <Home />
-          </Route>
-          <Route path="/detail/:id">
-            <ProductDetails />
-          </Route>
-          <Route path="/wishlist" >
-            <WishlistPage />
-          </Route>
-          <Route path="/cart" >
-            <CartPage />
-          </Route>
-          <Route path="/search" >
-            <SearchPage />
-          </Route>
-        </Switch>
+        <div className="App__contents">
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/detail/:id">
+              <ProductDetails />
+            </Route>
+            <Route path="/wishlist" >
+              <WishlistPage />
+            </Route>
+            <Route path="/cart" >
+              <CartPage />
+            </Route>
+            <Route path="/search" >
+              <SearchPage />
+            </Route>
+          </Switch>
+        </div>
         <NavBar />
       </div>
     </Router>

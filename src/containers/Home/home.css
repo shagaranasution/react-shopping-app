@@ -1,0 +1,39 @@
+.Home {
+}
+
+.Home__categories {
+  display: flex;
+  flex-direction: row;
+  overflow-x: auto;
+}
+
+.Home__category {
+  width: 35px;
+  min-height: 45px;
+  margin: 8px 12px;
+  font-size: 12px;
+  text-align: center;
+}
+
+.Home__category img {
+  width: 35px;
+  margin-bottom: 4px;
+}
+
+.Home__products_container {
+  height: 100%;
+}
+
+.Home__products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 8px;
+  padding: 8px 8px;
+}
+
+.Home__product {
+  border-radius: 8px;
+  box-shadow: rgba(0, 0, 0, 0.1) 0px 1px 3px 0px,
+    rgba(0, 0, 0, 0.06) 0px 1px 2px 0px;
+}

@@ -9,21 +9,13 @@
 a {
   text-decoration: none;
 }
-.container {
-  max-width: 415px;
-  height: 100vh;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: rgba(235, 235, 235, 0.3);
-  box-shadow: rgba(0, 0, 0, 0.08) 0px 4px 12px;
-}
 .loading-state {
-  border-radius: 6px;
+  border-radius: 8px;
   box-shadow: rgba(0, 0, 0, 0.04) 0px 3px 5px;
   background-color: #b8b8b8;
   opacity: 0.3;
 }
 ::placeholder {
-  color: s#333333;
+  background-color: #333333;
   opacity: 0.5;
 }
