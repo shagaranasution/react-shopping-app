@@ -41,12 +41,11 @@ const initialStateCarts = {
 export const addCarts = (state=initialStateCarts, action={}) => {
   switch (action.type) {
     case ADD_CARTS:
+      
+      // const newArr = [...state.carts, ...action.payload]
+      // console.log('newArr',newArr)
       return {
-        ...state,
-        carts: [
-          ...state.carts,
-          action.payload,
-        ],
+        carts: [...state.carts, ...action.payload]
       }
     default:
       return state
