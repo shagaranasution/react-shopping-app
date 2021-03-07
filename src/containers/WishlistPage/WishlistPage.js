@@ -1,3 +1,4 @@
+import { useEffect } from 'react'
 import { Link } from 'react-router-dom'
 
 import Header from '../../components/Header'
@@ -6,7 +7,11 @@ import ProductCard from '../../components/ProductCard'
 import './wishlist-page.css'
 
 const WishlistPage = (props) => {
-  const { products } = props
+  const { products, navRef } = props
+
+  useEffect(() => {
+    navRef.current.show()
+  }, [navRef])
 
   return (
     <div className="WishlistPage">

@@ -25,10 +25,10 @@ function App() {
               <ProductDetails navRef={navRef}/>
             </Route>
             <Route path="/wishlist" >
-              <WishlistPage />
+              <WishlistPage navRef={navRef} />
             </Route>
             <Route path="/cart" >
-              <CartPage />
+              <CartPage navRef={navRef}  />
             </Route>
             <Route path="/search" >
               <SearchPage navRef={navRef} />

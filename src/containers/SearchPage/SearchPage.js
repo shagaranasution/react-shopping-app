@@ -16,7 +16,7 @@ const SearchPage = (props) => {
   useEffect(() => {
     navRef.current.show()
     searchInputRef.current.focus()
-  }, [])
+  }, [navRef])
 
   const handleClick = () => {
     console.log("Search clicked")

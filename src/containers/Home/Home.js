@@ -19,7 +19,7 @@ const Home = (props) => {
   useEffect(() => { 
     navRef.current.show()
     onRequestProducts()
-  }, [onRequestProducts])
+  }, [navRef, onRequestProducts])
 
   return (
     <div className="Home">

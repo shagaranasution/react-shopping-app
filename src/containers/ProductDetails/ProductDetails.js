@@ -18,7 +18,7 @@ const ProductDetails = (props) => {
 
   useEffect(() => {
     navRef.current.hide()
-  }, [])
+  }, [navRef])
   
   const handleClick = () => {
    console.log("buy") 
