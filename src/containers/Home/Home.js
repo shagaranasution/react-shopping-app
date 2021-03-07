@@ -2,9 +2,9 @@ import { useEffect } from 'react'
 import { useHistory } from 'react-router-dom'
 
 import SearchInput from '../../components/SearchInput'
+import ProductCard from '../../components/ProductCard'
 
 import './home.css'
-import lovedLogo from '../../icon-loved.png'
 
 const Home = (props) => {
   const { 
@@ -54,19 +54,7 @@ const Home = (props) => {
           }) :
               products.productPromo.map((product) => {
                 return (
-                  <div className="Home__product" key={product.id}>
-                    <div className="Home__product-image">
-                      <img src={product.imageUrl} alt="" />
-                    </div>
-                    <div className="Home__product-title">
-                      <p>{product.title}</p>
-                    </div>
-                    <div className="Home__product-price">{product.price}</div>
-                    <div className="Home__product-icon">
-                      <img src={lovedLogo} alt="" />
-                      <span className="Home__product-loved">{product.loved}</span>
-                    </div>
-                  </div>
+                  <ProductCard product={product} key={product.id}/>
                 )
               })
             }
