@@ -4,8 +4,8 @@ import SearchPage from './SearchPage'
 
 const mapStateToProps = (state) => {
   return {
-    products: state.products.productPromo || [],
-    isPending: state.isPending,
+    products: state.requestProducts.products.productPromo || [],
+    isPending: state.requestProducts.isPending,
   }
 }
 

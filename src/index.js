@@ -1,17 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, applyMiddleware } from 'redux'
+import { createStore, combineReducers, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
 
 import './index.css'
 import App from './App'
-import { requestProducts } from './reducers'
+import { requestProducts, addCarts } from './reducers'
 
 const reduxLogger = createLogger()
 
-const store = createStore(requestProducts, applyMiddleware(thunkMiddleware, reduxLogger))
+const rootReducers = combineReducers({requestProducts, addCarts})
+
+const store = createStore(rootReducers, applyMiddleware(thunkMiddleware, reduxLogger))
 
 ReactDOM.render(
   <React.StrictMode>

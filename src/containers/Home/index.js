@@ -5,8 +5,8 @@ import { requestProducts } from '../../actions'
 
 const mapStateToProps = (state) => {
   return {
-    products: state.products,
-    isPending: state.isPending
+    products: state.requestProducts.products,
+    isPending: state.requestProducts.isPending
   }
 }
 

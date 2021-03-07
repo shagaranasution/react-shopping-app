@@ -5,7 +5,7 @@ import ProductDetails from './ProductDetails'
 const mapStateToProps = (state) => {
 
   return {
-    products: state.products.productPromo || []
+    products: state.requestProducts.products.productPromo || []
   }
 }
 

@@ -1,7 +1,9 @@
 import {
   REQUEST_PRODUCTS_PENDING,
   REQUEST_PRODUCTS_SUCCESS,
-  REQUEST_PRODUCTS_FAILED
+  REQUEST_PRODUCTS_FAILED,
+
+  ADD_CARTS,
  } from './constants';
 
 const initialStateProducts = {
@@ -10,7 +12,6 @@ const initialStateProducts = {
 }
 
 export const requestProducts = (state=initialStateProducts, action={}) => {
-  console.log(action.type)
   switch (action.type) {
     case REQUEST_PRODUCTS_PENDING:
       return {
@@ -27,6 +28,22 @@ export const requestProducts = (state=initialStateProducts, action={}) => {
       return {
         ...state,
         error: action.payload
+      }
+    default:
+      return state
+  }
+}
+
+const initialStateCarts = {
+  carts: []
+}
+
+export const addCarts = (state=initialStateCarts, action={}) => {
+  switch (action.type) {
+    case ADD_CARTS:
+      return {
+        ...state,
+        carts: action.payload,
       }
     default:
       return state
