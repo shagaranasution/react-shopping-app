@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import { Link } from 'react-router-dom'
 
 import ProductCard from '../../components/ProductCard'
@@ -10,6 +10,13 @@ const SearchPage = (props) => {
   const {products} = props
   const [searchedProducts, setSearchedProducts] = useState([])
   const [searchValue, setSearchValue] = useState('')
+  
+  const searchInputRef = useRef()
+
+  useEffect(() => {
+    console.log("searchInputRef", searchInputRef)
+    searchInputRef.current.focus()
+  }, [])
 
   const handleClick = () => {
     console.log("Search clicked")
@@ -27,15 +34,19 @@ const SearchPage = (props) => {
 
   return (
     <div className="SearchPage">
-      <SearchInput onChange={handleChange} onClick={handleClick} withLeftButton />
+      <SearchInput 
+        ref={searchInputRef}
+        onChange={handleChange} 
+        onClick={handleClick} 
+        withLeftButton />
       {
         searchedProducts.length > 0 &&
             <div className="SearchPage__products_container">
               <div className="SearchPage__products">
                 {searchedProducts.map((product) => {
                   return (
-                    <Link to={`/detail/${product.id}`}>
-                      <ProductCard product={product} key={product.id} />
+                    <Link to={`/detail/${product.id}`} key={product.id}>
+                      <ProductCard product={product} />
                     </Link>
                   )
                 })}
