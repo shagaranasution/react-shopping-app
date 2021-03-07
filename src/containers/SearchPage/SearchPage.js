@@ -14,7 +14,6 @@ const SearchPage = (props) => {
   const searchInputRef = useRef()
 
   useEffect(() => {
-    console.log("searchInputRef", searchInputRef)
     searchInputRef.current.focus()
   }, [])
 

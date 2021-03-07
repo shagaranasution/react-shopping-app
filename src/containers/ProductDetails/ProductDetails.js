@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useParams} from 'react-router-dom'
+import { useParams, useHistory} from 'react-router-dom'
 
 import './product-details.css'
 import lovedOnLogo from '../../icon-loved-on.png'
@@ -7,14 +7,14 @@ import lovedOffLogo from '../../icon-loved-off.png'
 
 const ProductDetails = (props) => {
   const { products, navRef } = props
-  console.log("props", props)
+
   const { id: productId } = useParams()
+  const history = useHistory()
   const product = products.filter(product => product.id === productId)[0] || {}
   const lovedLogoSource = product.loved === 0 ? lovedOffLogo : lovedOnLogo
-  console.log("product", product)
+
 
   useEffect(() => {
-    console.log("effect")
     navRef.current.hide()
   }, [])
   
@@ -24,6 +24,15 @@ const ProductDetails = (props) => {
 
   return (
     <div className="ProductDetails">
+      <div className="ProductDetails__nav_wrapper">
+        <div className="ProductDetails__nav">
+          <div 
+            className="ProductDetails__backbutton" 
+            onClick={() => history.goBack()}>
+            <p>{'<'}</p>
+          </div>
+        </div>
+      </div>
       {Object.keys(product).length > 0 && 
         <>
           <div className="ProductDetails__image">

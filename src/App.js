@@ -11,7 +11,7 @@ import SearchPage from './containers/SearchPage'
 import './app.css'
 
 function App() {
-  const navRef = useRef(null)
+  const navRef = useRef()
 
   return (
     <Router>
@@ -19,7 +19,7 @@ function App() {
         <div className="App__contents">
           <Switch>
             <Route path="/" exact>
-              <Home />
+              <Home navRef={navRef} />
             </Route>
             <Route path="/detail/:id">
               <ProductDetails navRef={navRef}/>

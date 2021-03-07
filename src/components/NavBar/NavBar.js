@@ -28,9 +28,11 @@ const NavBar = (props, ref) => {
   useImperativeHandle(ref, () => {
     return {
       hide: () => {
-        // const isHidden = navRef.current.hidden
         navRef.current.hidden = true
       },
+      show: () => {
+        navRef.current.hidden = false
+      }
     }
   })
 

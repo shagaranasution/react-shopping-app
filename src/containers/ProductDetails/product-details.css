@@ -5,6 +5,46 @@
   grid-gap: 8px;
 }
 
+.ProductDetails__nav_wrapper {
+  position: relative;
+  height: 100%;
+  width: 100%;
+  grid-column: 1/7;
+  grid-row: 1/2;
+}
+
+.ProductDetails__nav {
+  position: absolute;
+  top: 0;
+  right: 0;
+  left: 0;
+  height: 42px;
+  display: flex;
+  padding: 0 16px;
+}
+
+.ProductDetails__backbutton {
+  text-align: center;
+  align-self: center;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background: rgba(0, 0, 0, 0.26);
+  border-radius: 35px;
+  padding-bottom: 6px;
+  padding-left: 3px;
+  padding-right: 5px;
+  cursor: pointer;
+}
+
+.ProductDetails__backbutton p {
+  color: #ffffff;
+  font-size: 20px;
+}
+
 .ProductDetails__image {
   grid-column: 1/7;
   grid-row: 1/3;

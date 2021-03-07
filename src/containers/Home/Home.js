@@ -10,11 +10,14 @@ const Home = (props) => {
   const { 
     products,
     isPending,
-    onRequestProducts } = props
+    onRequestProducts,
+    navRef,
+  } = props
 
   const history = useHistory()
 
   useEffect(() => { 
+    navRef.current.show()
     onRequestProducts()
   }, [onRequestProducts])
 
