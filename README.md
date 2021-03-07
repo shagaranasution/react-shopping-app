@@ -11,3 +11,13 @@ npm install
 npm start # open localhost:3000
 ```
 
+## ToDos
+- [x] Home Page
+- [x] Search Page
+- [x] Detail Product Page
+- [x] Cart Page
+- [x] Wishlist Page
+- [ ] Functionality product adding to wishlist
+- [ ] Login Page
+- [ ] Auth 
+ 
