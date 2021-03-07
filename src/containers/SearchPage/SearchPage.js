@@ -19,7 +19,7 @@ const SearchPage = (props) => {
   }, [navRef])
 
   const handleClick = () => {
-    console.log("Search clicked")
+   
   }
 
   const handleChange = (event) => {

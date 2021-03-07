@@ -10,7 +10,6 @@ import lovedOffLogo from '../../icon-loved-off.png'
 
 const ProductDetails = (props) => {
   const { products, navRef, handleBuy } = props
-  console.log("props", props)
   const { id: productId } = useParams()
   const product = products.filter(product => product.id === productId)[0] || {}
   const lovedLogoSource = product.loved === 0 ? lovedOffLogo : lovedOnLogo

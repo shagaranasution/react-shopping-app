@@ -10,8 +10,6 @@ const CartPage = (props) => {
     carts,
     } = props
 
-  console.log("carts", carts.length === 0 )
-
   useEffect(() => {
     navRef.current.show()
   }, [navRef])
@@ -23,8 +21,6 @@ const CartPage = (props) => {
         <div className="CartPage__items">
           {
             carts.map((item, index) => {
-              console.log("item", item)
-              console.log("item", item.title)
               return (
                 <div className="CartPage__item" key={`${item.id}-${index}`}>
                   <div className="CartPage__item_image">
