@@ -1,3 +1,4 @@
+import { forwardRef, useImperativeHandle, useRef } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 
 import './navbar.css'
@@ -21,11 +22,22 @@ const menuList = [
   },
 ]
 
-const NavBar = () => {
-  const location = useLocation();
+const NavBar = (props, ref) => {
+  const navRef = useRef(null)
 
+  useImperativeHandle(ref, () => {
+    return {
+      hide: () => {
+        // const isHidden = navRef.current.hidden
+        navRef.current.hidden = true
+      },
+    }
+  })
+
+  const location = useLocation();
+  
   return (
-    <nav className="NavBar">
+    <nav className="NavBar" ref={navRef}>
       <div className="NavBar__links">
         {
           menuList.map((menu) => {
@@ -43,4 +55,4 @@ const NavBar = () => {
   )
 }
 
-export default NavBar
+export default forwardRef(NavBar)

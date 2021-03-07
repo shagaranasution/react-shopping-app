@@ -1,5 +1,5 @@
 import { useEffect } from 'react'
-import { useHistory } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 
 import SearchInput from '../../components/SearchInput'
 import ProductCard from '../../components/ProductCard'
@@ -54,7 +54,9 @@ const Home = (props) => {
           }) :
               products.productPromo.map((product) => {
                 return (
-                  <ProductCard product={product} key={product.id}/>
+                  <Link to={`/detail/${product.id}`} key={product.id}>
+                    <ProductCard product={product} />
+                  </Link>
                 )
               })
             }

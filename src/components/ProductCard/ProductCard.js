@@ -1,9 +1,11 @@
 import './product-card.css'
 
-import lovedLogo from '../../icon-loved.png'
+import lovedOnLogo from '../../icon-loved-on.png'
+import lovedOffLogo from '../../icon-loved-off.png'
 
 const ProductCard = (props) => {
   const {product} = props
+  const lovedLogoSource = product.loved === 0 ? lovedOffLogo : lovedOnLogo
 
   return (
     <div className="ProductCard" key={product.id}>
@@ -11,12 +13,11 @@ const ProductCard = (props) => {
         <img src={product.imageUrl} alt="" />
       </div>
       <div className="ProductCard__title">
-        <p>{product.title}</p>
+        <h1>{product.title}</h1>
       </div>
       <div className="ProductCard__price">{product.price}</div>
       <div className="ProductCard__icon">
-        <img src={lovedLogo} alt="" />
-        <span className="ProductCard__loved">{product.loved}</span>
+        <img src={lovedLogoSource} alt="" />
       </div>
     </div>
   )

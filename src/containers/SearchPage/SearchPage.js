@@ -1,6 +1,7 @@
 import { useState } from 'react'
-import ProductCard from '../../components/ProductCard'
+import { Link } from 'react-router-dom'
 
+import ProductCard from '../../components/ProductCard'
 import SearchInput from '../../components/SearchInput'
 
 import './search-page.css'
@@ -33,7 +34,9 @@ const SearchPage = (props) => {
               <div className="SearchPage__products">
                 {searchedProducts.map((product) => {
                   return (
-                    <ProductCard product={product} key={product.id} />
+                    <Link to={`/detail/${product.id}`}>
+                      <ProductCard product={product} key={product.id} />
+                    </Link>
                   )
                 })}
               </div>

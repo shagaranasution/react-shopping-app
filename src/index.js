@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { createStore, combineReducers, applyMiddleware } from 'redux'
+import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import thunkMiddleware from 'redux-thunk'
 import { createLogger } from 'redux-logger'
@@ -8,8 +8,6 @@ import { createLogger } from 'redux-logger'
 import './index.css'
 import App from './App'
 import { requestProducts } from './reducers'
-
-// const rootReducers = combineReducers({requestRobots, searchRobots})
 
 const reduxLogger = createLogger()
 

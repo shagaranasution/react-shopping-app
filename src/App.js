@@ -1,3 +1,4 @@
+import { useRef } from 'react'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 
 import NavBar from './components/NavBar'
@@ -10,6 +11,8 @@ import SearchPage from './containers/SearchPage'
 import './app.css'
 
 function App() {
+  const navRef = useRef(null)
+
   return (
     <Router>
       <div className="App">
@@ -19,7 +22,7 @@ function App() {
               <Home />
             </Route>
             <Route path="/detail/:id">
-              <ProductDetails />
+              <ProductDetails navRef={navRef}/>
             </Route>
             <Route path="/wishlist" >
               <WishlistPage />
@@ -32,7 +35,7 @@ function App() {
             </Route>
           </Switch>
         </div>
-        <NavBar />
+        <NavBar ref={navRef}/>
       </div>
     </Router>
   );
