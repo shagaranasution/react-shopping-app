@@ -43,7 +43,10 @@ export const addCarts = (state=initialStateCarts, action={}) => {
     case ADD_CARTS:
       return {
         ...state,
-        carts: action.payload,
+        carts: [
+          ...state.carts,
+          action.payload,
+        ],
       }
     default:
       return state

@@ -2,7 +2,9 @@ import { apiCall } from './api/api'
 import {
   REQUEST_PRODUCTS_PENDING,
   REQUEST_PRODUCTS_SUCCESS,
-  REQUEST_PRODUCTS_FAILED
+  REQUEST_PRODUCTS_FAILED,
+
+  ADD_CARTS,
  } from './constants'
 
 export const requestProducts = () => (dispatch) => {
@@ -11,3 +13,5 @@ export const requestProducts = () => (dispatch) => {
     .then(data => dispatch({ type: REQUEST_PRODUCTS_SUCCESS, payload: data[0].data }))
     .catch(error => dispatch({ type: REQUEST_PRODUCTS_FAILED, payload: error }))
 }
+
+export const addCarts = (product) => ({ type: ADD_CARTS, payload: product })

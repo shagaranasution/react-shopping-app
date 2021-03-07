@@ -9,8 +9,8 @@ import lovedOffLogo from '../../icon-loved-off.png'
 
 
 const ProductDetails = (props) => {
-  const { products, navRef } = props
-
+  const { products, navRef, handleBuy } = props
+  console.log("props", props)
   const { id: productId } = useParams()
   const product = products.filter(product => product.id === productId)[0] || {}
   const lovedLogoSource = product.loved === 0 ? lovedOffLogo : lovedOnLogo
@@ -20,8 +20,8 @@ const ProductDetails = (props) => {
     navRef.current.hide()
   }, [navRef])
   
-  const handleClick = () => {
-   console.log("buy") 
+  const handleClick = (product) => {
+    handleBuy(product)
   }
 
   return (
@@ -47,7 +47,9 @@ const ProductDetails = (props) => {
             </div>
             <div className="ProductDetails__buy">
               <p className="ProductDetails__buy_price">{product.price}</p>
-              <button className="ProductDetails__buy_price_button" onClick={handleClick}>
+              <button 
+                className="ProductDetails__buy_price_button" 
+                onClick={() => handleClick(product)}>
                 Buy
               </button>
             </div>
