@@ -7,13 +7,14 @@ import SearchInput from '../../components/SearchInput'
 import './search-page.css'
 
 const SearchPage = (props) => {
-  const {products} = props
+  const {products, navRef} = props
   const [searchedProducts, setSearchedProducts] = useState([])
   const [searchValue, setSearchValue] = useState('')
   
   const searchInputRef = useRef()
 
   useEffect(() => {
+    navRef.current.show()
     searchInputRef.current.focus()
   }, [])
 

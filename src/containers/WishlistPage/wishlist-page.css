@@ -1,0 +1,14 @@
+.WishlistPage {
+}
+
+.WishlistPage__products_container {
+  height: 100%;
+}
+
+.WishlistPage__products {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: minmax(200px, auto);
+  grid-gap: 8px;
+  padding: 8px 12px;
+}

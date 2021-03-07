@@ -31,7 +31,7 @@ function App() {
               <CartPage />
             </Route>
             <Route path="/search" >
-              <SearchPage />
+              <SearchPage navRef={navRef} />
             </Route>
           </Switch>
         </div>
