@@ -8,15 +8,15 @@ const menuList = [
     link: '/',
   },
   {
-    name: 'Wishlist',
+    name: 'wishlist',
     link: '/wishlist',
   },
   {
-    name: 'Cart',
+    name: 'cart',
     link: '/cart',
   },
   {
-    name: 'Logout',
+    name: 'logout',
     link: '/logout',
   },
 ]
@@ -30,7 +30,7 @@ const NavBar = () => {
         {
           menuList.map((menu) => {
             return (
-              <div className={`NavBar__link NavBar__link-${location.pathname === menu.link ? 'active' : 'inactive'}`} key={menu.name}>
+              <div className={`NavBar__link NavBar__link-${(location.pathname === menu.link) || (menu.name === "home" && location.pathname === "/search") ? 'active' : 'inactive'}`} key={menu.name}>
                 <Link to={menu.link}>
                   {menu.name}
                 </Link>

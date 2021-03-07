@@ -5,7 +5,7 @@ import {
  } from './constants';
 
 const initialStateProducts = {
-  products: [],
+  products: {},
   isPending: true
 }
 

@@ -16,6 +16,6 @@ a {
   opacity: 0.3;
 }
 ::placeholder {
-  background-color: #333333;
+  color: #333333;
   opacity: 0.5;
 }
